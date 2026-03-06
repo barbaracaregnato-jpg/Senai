@@ -1,7 +1,7 @@
-maior = float()
+acima_15 = float()
 menor = float()
 soma = 0
-acima_100 = 0 
+
 for cont in range(11):
     temperatura = float(input(f"Digite a {cont + 1} temperatura: "))
     soma += temperatura
