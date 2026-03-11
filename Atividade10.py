@@ -1,23 +1,30 @@
-acima_15 = float()
-menor = float()
-soma = 0
+soma = 0 
+acima_15 = 0
+acima_20 = 0
+acima_200 = 0
+sobrecarga = False
+alerta = False
+for i in range(8):
+  corrente = float(input(f"Digite a {i+1} medição de corrente(A): "))
+  soma += corrente 
 
-for cont in range(11):
-    temperatura = float(input(f"Digite a {cont + 1} temperatura: "))
-    soma += temperatura
-    if cont == 0:
-        maior = temperatura 
-        menor = temperatura 
+  if corrente > 15:
+    acima_15 += 1
+  if corrente > 20:
+    sobrecarga = True
+    acima_20 += 1
+  if corrente > 200:
+    alerta = True
+    acima_200 += 1
+media = soma/ 8
+print("Medições acima de de 15 (A)", acima_15)
+print("Média da corrente: ", media)
+if sobrecarga:
+  print(f"Houve sobrecarga no motor {acima_20} vezes")
+if alerta:
+  print(f"ALERTA: Medição ultrapassou 200 {acima_200} vezes")
 
-    if  temperatura > maior:
-        maior = temperatura
-    if  temperatura < menor: 
-        menor = temperatura
-    if  temperatura > 100:
-        acima_100 += 1 
-media = soma/cont
 
-print(f"A maior temperatura foi {maior}")
-print(f" A menor temperatura é menor {menor}")
-print(f" A media das temperaturas é: {media}" )
-print (f" A temperatura ultrapassou 100 {acima_100} vezes")
+    
+    
+
